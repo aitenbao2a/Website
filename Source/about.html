@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .top-right-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .top-right-links a {
+            text-decoration: none;
+            color: #a78234;
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Georgia', serif;
+        }
+
+        .top-right-links a:hover {
+            background-color: #b28c73;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 5px solid #e2d2c3;
+        }
+        .left-section, .right-section {
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .left-section {
+            width: 100%;
+            background-color: #f2e1d9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .left-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+        }
+        .left-section h1 {
+            font-size: 28px;
+            font-family: Georgia, serif;
+        }
+        .info {
+            text-align: center;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .section-title {
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 20px;
+            color: #3d3d3d;
+            font-family: Georgia, serif;
+            position: relative;
+        }
+        .section-title::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #b28c73;
+            border-radius: 50%;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+        }
+        .experience-item h3, .education-item h3, .project-item h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #3d3d3d;
+            font-family: Georgia, serif;
+        }
+        .experience-item p, .education-item p, .project-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #6d6d6d;
+        }
+        ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 10px 0;
+        }
+        .skills li, .languages li, .interests li {
+            margin: 5px 0;
+        }
+        .icon {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #b28c73;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .right-section hr {
+            border: none;
+            border-top: 2px solid #f2e1d9;
+            margin: 20px 0;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .left-section {
+                width: 35%;
+            }
+            .right-section {
+                width: 65%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right-links">
+        <a href="../index.html">Home</a> 
+        <a href="./about.html">About</a>
+        <a href="./lab.html">Lab</a> 
+    </div>
+
+    <div class="container">
+        <div class="left-section">
+            <img src="./img/faceID.jpg" alt="Gia Bảo">             <h1>Gia Bảo</h1>
+            <div class="info">
+                <p>0969059940</p>
+                <p>23130025@st.hcmuaf.edu.vn</p>
+                <p>Hoài Ân - Bình Định</p>
+                <p>JaBaw</p>
+            </div>
+            <div class="languages">
+                <h2 class="section-title">Attributes</h2>
+                <ul>
+                    <li><span class="icon"></span>VietNamese</li>
+                    <li><span class="icon"></span>Handsome</li>
+                    <li><span class="icon"></span>Smart</li>
+                    <li><span class="icon"></span>Mrs. Hai's nephew</li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h2 class="section-title">Skills</h2>
+                <ul>
+                    <li><span class="icon"></span>Football Skills</li>
+                    <li><span class="icon"></span>Team Work</li>
+                    <li><span class="icon"></span>PowerPoint</li>
+                    <li><span class="icon"></span>Eat</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="experience">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>Second-year student at Nong Lam University, Ho Chi Minh City</h3>
+                    <p class="bold">Major in Information Technology</p>
+                    <p>Experience in managing self-designed projects with no failed subjects.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Future Goal: IT Boss by 2027</h3>
+                    <p class="bold">Envisioned role at VNG in 2028</p>
+                    <p>Specialized in game graphic design and anti-cheating software development.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="education">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>Nong Lam University</h3>
+                    <p>Master's in Information Technology</p>
+                </div>
+            </div>
+            <hr>
+            <div class="projects">
+                <h2 class="section-title">Projects Completed</h2>
+                <div class="project-item">
+                    <h3>Betting Website</h3>
+                    <p>Developed an interactive betting platform with advanced anti-cheat features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Materials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .material-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .material-icon img {
+            width: 80px; /* Tăng kích thước hình ảnh */
+            height: 80px; /* Tăng kích thước hình ảnh */
+            margin-bottom: 15px; /* Khoảng cách giữa hình và chữ */
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        a.button {
+            background-color: white;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Materials</h1>
+        <div class="materials-grid">
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="HTML">
+                </div>
+                <h3>HTML</h3>
+                <a class="button" href="./subject/html.html">View Materials</a>
+            </div>
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="JavaScript">
+                </div>
+                <h3>JavaScript</h3>
+                <a class="button" href="./subject/javascript.html">View Materials</a>
+            </div>
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="CSS">
+                </div>
+                <h3>CSS</h3>
+                <a class="button" href="./subject/css.html">View Materials</a>
+            </div>
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="Python">
+                </div>
+                <h3>Python</h3>
+                <a class="button" href="./subject/python.html">View Materials</a>
+            </div>
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="PHP">
+                </div>
+                <h3>PHP</h3>
+                <a class="button" href="./subject/php.html">View Materials</a>
+            </div>
+            <div class="material-card">
+                <div class="material-icon">
+                    <img src="./ImagesIcon/icon.png" alt="Java">
+                </div>
+                <h3>Java</h3>
+                <a class="button" href="./subject/java.html">View Materials</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

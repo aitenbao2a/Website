@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <style>
+       body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+
+        }
+        .header{
+            background-color: black;
+            justify-content: left;
+            border-radius: 10px;
+            gap: 30px;
+        }
+        .header-first{
+            font-size: 40px;
+            font-weight:bold;
+            color: white;
+            margin-left: 20px;
+        }
+        .header-second{
+            font-size:15px;
+            color: white;
+            margin-left: 20px;
+            display: flex;
+            gap:10px;
+            margin-top:20px;
+        }
+        .menu {
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 2px solid #ddd;
+            font-size: 20px;
+            gap: 15px;
+
+        }
+        .tab-link {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: white;
+            border-bottom: 3px solid transparent;
+            transition: border-bottom 0.3s;
+            cursor: pointer;
+        }
+        .tab-link.active {
+            border-bottom: 3px solid white;
+            font-weight: bold;
+        }
+        .tab-link:hover {
+            border-bottom: 3px solid white;
+        }
+        .tab-content {
+            display: none; 
+            padding: 0;
+        }
+        .tab-content.active {
+            display: block; 
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-first">My learning</div>
+        <div class="header-second">
+            <strong>87hr 36min</strong>
+            <div>watched</div>
+            <div><img src="./Source/Icon/warning.png" alt="" style="width: 20px;height: 20px"></div>
+            <strong>View all activity</strong>
+        </div>
+        <div class="menu">
+            <a onclick="openTab('allCourses')" class="tab-link active">All courses</a>
+            <a onclick="openTab('learningPaths')" class="tab-link">Learning paths</a>
+            <a onclick="openTab('certifications')" class="tab-link">Certification</a>
+            <a onclick="openTab('archived')" class="tab-link">Archived</a>
+            <a onclick="openTab('learningTools')" class="tab-link">Learning Tools</a>
+        </div>
+    </div>
+   
+    <div class="tab-content active" id="allCourses">
+        <iframe src="./Source/allCource.html"></iframe>
+    </div>
+    <div class="tab-content" id="learningPaths">
+        <iframe src="./Source/learningPaths.html"></iframe>
+    </div>
+    <div class="tab-content" id="certifications">
+        <iframe src="./Source/certifications.html"></iframe>
+    </div>
+    <div class="tab-content" id="archived">
+        <iframe src="./Source/archived.html"></iframe>
+    </div>
+    <div class="tab-content" id="learningTools">
+        <iframe src="./Source/learningTools.html"></iframe>
+    </div>
+    <script>
+        function openTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            const links = document.querySelectorAll('.tab-link');
+            links.forEach(link => link.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

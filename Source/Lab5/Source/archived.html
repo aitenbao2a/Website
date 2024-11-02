@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .course-card {
+            width: calc(25% - 20px);
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .course-card-title {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .course-card-mini {
+            margin: 10px 0;
+            font-size: 10px;
+            font-weight: lighter;
+            text-align: left;
+        }
+        .course-card-icon {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .course-card-icon img {
+            width: 100%;
+            height: 25px;
+        }
+        .course-card-100 {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-card-leave {
+            font-size: 11px;
+            text-align: right;
+            color: gray;
+            cursor: pointer;
+        }
+     </style>    
+</html>
+    <div class="course-card">
+        <img src="./Icon/t1.jpg" alt="">
+        <div class="course-card-title">
+            <div> 
+                FPT_Corporate Social Responsibility Tranning 2024
+            </div>
+        </div>
+        <div class="course-card-mini">
+            <div>
+                FSOFT Content Development
+            </div>
+        </div>
+        <div class="course-card-icon">
+            <img src="./Icon/minus.png" alt="" style="width: 15%;height: 25px">
+        </div>
+        <div class="course-card-100">
+                <div>
+                    15% complete
+                </div>
+                <div>
+                    ★★★★★
+                </div>
+            </div>
+        <div class="course-card-leave">
+            <div>
+                Leave a rating
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .body-first {
+            font-size: 17px;
+            margin: 30px 20px;
+            display: flex;
+            gap: 170px;
+            font-weight: lighter;
+            color: black;
+        }
+        .filter-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .dropdown, .reset {
+            border: 1px solid #333;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reset {
+            color: gray;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: none;
+            outline: none;
+            width: 180px;
+        }
+
+        .search-button {  
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .body-second {
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .course-card {
+            width: calc(25% - 20px);
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .course-card-title {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .course-card-mini {
+            margin: 10px 0;
+            font-size: 10px;
+            font-weight: lighter;
+            text-align: left;
+        }
+        .course-card-icon {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .course-card-icon img {
+            width: 100%;
+            height: 25px;
+        }
+        .course-card-100 {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-card-leave {
+            font-size: 11px;
+            text-align: right;
+            color: gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <div class="body-first">
+        <div>
+            Sort by
+        </div>
+        <div>
+            Filter by
+        </div>
+    </div>
+    <div class="filter-container">
+        <div class="dropdown">Recently Accessed ▼</div>
+        <div class="dropdown">Categories ▼</div>
+        <div class="dropdown">Progress ▼</div>
+        <div class="dropdown">Instructor ▼</div>
+        <div class="reset">Reset</div>  
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search my courses">
+            <button class="search-button">  <img src="./Icon/searchIcon.png" alt=""style="width: 20px;height: 20px"></button>
+        </div>
+    </div>
+    <div class="body-second">
+        <div class="course-list">
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        FPT_ISMS Refresh Traning S2 2024 (VietNamese)
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        FSOFT Content Development
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 100%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            100% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                         </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        The Complete Spring Boot Development Bootcamp
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                       Learn The Part Inc,..Ryan Slim
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 20%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            20% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                         </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        MuleSoft 4.X Complete Guide For Beginners - Hand On ..
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        Chinna Reddy
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 15%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            15% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                         </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        English Vocabulary: 504 Essential Words throungh 7..
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        Micter Rabiey
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 1%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            1% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                         </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-second">
+        <div class="course-list">
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                       Buid a Backend REST API with Python
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        MCU
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 80%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            80% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                        </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        Chat GPT python
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        HiProchesu
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 100%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            100% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                        </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        Learning with me
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        Bao
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 55%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            55% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                        </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="./Icon/t1.jpg" alt="">
+                <div class="course-card-title">
+                    <div> 
+                        Development Information
+                    </div>
+                </div>
+                <div class="course-card-mini">
+                    <div>
+                        Chat GPT
+                    </div>
+                </div>
+                <div class="course-card-icon">
+                    <img src="./Icon/minus.png" alt="" style="width: 23%;height: 25px">
+                </div>
+                <div class="course-card-100">
+                        <div>
+                            23% complete
+                        </div>
+                        <div>
+                            ★★★★★
+                        </div>
+                    </div>
+                <div class="course-card-leave">
+                    <div>
+                        Leave a rating
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

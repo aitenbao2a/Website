@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .top-right-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .top-right-links a {
+            text-decoration: none;
+            color: #a78234;
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Georgia', serif;
+        }
+
+        .top-right-links a:hover {
+            background-color: #b28c73;
+            color: #ffffff;
+        }
+
+        .tabs-container {
+            width: 100%;
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tab {
+            background-color: #ffffff;
+            border: 2px solid #e2d2c3;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-size: 1rem;
+            color: #a78234;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab:hover {
+            background-color: #b28c73;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .tab-content {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            height: 500px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-right-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="lab.html">Lab</a>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <div class="tab" onclick="openTab('lab1')">Lab 1</div>
+            <div class="tab" onclick="openTab('lab2')">Lab 2</div>
+            <div class="tab" onclick="openTab('lab3')">Lab 3</div>
+            <div class="tab" onclick="openTab('lab4')">Lab 4</div>
+            <div class="tab" onclick="openTab('lab5')">Lab 5</div>
+
+        </div>
+    </div>
+
+    <div class="tab-content" id="lab1">
+        <iframe src="./Lab1/main.html"></iframe>
+    </div>
+    <div class="tab-content" id="lab2">
+        <iframe src="./Lab2/main.html"></iframe>
+    </div>
+    <div class="tab-content" id="lab3">
+        <iframe src="./Lab3/lab3.html"></iframe>
+    </div>
+    <div class="tab-content" id="lab4">
+        <iframe src="./Lab4/lab4.html"></iframe>
+    </div>
+    <div class="tab-content" id="lab5">
+        <iframe src="./Lab5/lab5.html"></iframe>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const activeTab = document.getElementById(tabName);
+            activeTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>

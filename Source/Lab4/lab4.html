@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header-nav {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .header-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+        .dashboard {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            gap: 1px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .dashboard-header {
+            display: flex;
+            gap:10px;
+            
+        }
+        .welcome {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        .streak {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .frist-streak{
+            font-size: 20;
+        }
+        .second-streak{
+            font-size: 10;
+            display: flex;
+        }
+        .streak span {
+            font-size: 16px;
+        }
+        .progress-container {
+            display: flex;
+            margin: 20px ;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 1px rgba(240, 239, 239, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            gap: 300px;
+            margin-left: 50px;
+        }
+        .progress {
+            display: flex;
+            align-items: center;
+        }
+        .progress .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid #17b737;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #27418f;
+        }
+        .progress-info {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #777;
+            
+        }
+        .menu {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .menu a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: #333;
+            border-bottom: 3px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .menu a.active {
+            border-bottom: 3px solid black;
+        }
+
+        .menu a:hover {
+            border-bottom: 3px solid black;
+        }
+        .content-section {
+            margin: 20px 0;
+        }
+        .content-section h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .course-list {
+            display: flex;
+            overflow-x: scroll;
+        }
+        .course-card {
+            min-width: 250px;
+            margin-right: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .course-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .course-card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .course-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .containe {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        h2 {
+            text-align: left;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .recommendations {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 23%;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            border-bottom: 2px solid #f5f5f5;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin: 10px;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #666;
+            margin: 0 10px 10px;
+        }
+
+        .rating {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #ff9900;
+        }
+
+        .rating span {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .personalize-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .personalize-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .personalize-section p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .personalize-section button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .personalize-section button:hover {
+            background-color: #005bb5;
+        }
+        .edit-link {
+            font-size: 14px;
+            text-align: right;
+            color: #0073e6;
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .edit-link:hover {
+            text-decoration: underline;
+        }
+    
+
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-nav">
+        <a href="#">Business Operations</a>
+        <a href="#">Cloud Computing</a>
+        <a href="#">Cybersecurity</a>
+        <a href="#">Data Science</a>
+        <a href="#">Development</a>
+        <a href="#">IT Operations</a>
+        <a href="#">Language Learning</a>
+        <a href="#">Leadership & Management</a>
+        <a href="#">Marketing</a>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="dashboard-header">
+        <img src="./Source/Icon/faceID.jpg" alt=""style="width: 100px; height: 100px;">
+        <div class="welcome">Welcome back,Trang Gia Bao
+            <div class="progress-info">
+                <a href="#">Add occupation and interests </a>
+            </div> 
+        </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="progress-container">
+        <div class="frist-streak">
+            <strong>Weekly streak</strong><br>
+            <div> 
+                One ring down, one to go. Keep it up!
+            </div>
+        </div>
+   
+        <div class="second-streak">
+            <div> 
+                <img src="./Source/Icon/fire.png" alt="" style="width: 30px; height: 30px;">
+                <strong>2 weeks </strong><br> 
+                Current streak
+            </div>
+        </div>
+        <div class="progress">
+            <div class="circle">
+                20/30
+            </div>
+            <div class="progress-info">
+                course min<br>0/1 visit<br>Nov 10 - 11
+                <p><a href="#">See all activity</a>
+                </p>
+            </div> 
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Pick up where you left off</h2>
+        <div class="menu">
+            <div class="menu">
+                <a href="#" class="active">Courses</a>
+                <a href="#">Learning paths</a>
+                <a href="#">Certification preparation</a>
+            </div>
+        </div>
+        <div class="course-list">
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t1.jpg" alt="">
+                <h3>FPT_ISMS Refresh Training S2 2024</h3>
+                <p>. Introduction • 1m</p>
+            </div>
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t2.jpg" alt="">
+                <h3> Java Interface Traning for new Student</h3>
+                <p>. Interview • </p>
+            </div>
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t3.jpg" alt="">
+                <h3>HTML Web (Information and User)</h3>
+                <p>. Information• 3 source</p>
+            </div>
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t4.jpg" alt="">
+                <h3>Testing for Information of Java</h3>
+                <p>. Lab • 4 page </p>
+            </div>
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t5.jpg" alt="">
+                <h3>MuleSoft 4.X Guide</h3>
+                <p>. Integration introduction • 6m left</p>
+            </div>
+            <div class="course-card">
+                <a href="./Source/extra.html"> 
+                <img src="./Source/Icon/t6.jpg" alt="">
+                <h3>English Vocabulary</h3>
+                <p>. Quiz and Questions • 9 questions</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Based on your certification interests, we recommend</h2>
+
+    <a href="#" class="edit-link">Edit certification interests</a>
+
+    <div class="recommendations">
+        <div class="card">
+            <img src="./Source/Icon/d5.webp" alt="Certification 1">
+            <h3>Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h3>
+            <p>Andrii Piatakha, Learn IT University</p>
+            <p class="rating">4.6 ★★★★★ <span>(438)</span></p>
+        </div>
+        <div class="card">
+            <img src="./Source/Icon/d4.webp" alt="Certification 2">
+            <h3>Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h3>
+            <p>Tim Buchalka's Learn Programming Academy, Goran</p>
+            <p class="rating">3.2 ★★★★★ <span>(5,906)</span></p>
+        </div>
+        <div class="card">
+            <img src="./Source/Icon/d3.jpg" alt="Certification 3">
+            <h3>Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h3>
+            <p>Intertech Training, Jeff Jensen</p>
+            <p class="rating">3.0 ★★★★★ <span>(9,726)</span></p>
+        </div>
+        <div class="card">
+            <img src="./Source/Icon/d1.jpg" alt="Certification 4">
+            <h3>Spring Professional Certification Exam Tutorial - Module 02</h3>
+            <p>Dominik Cebula</p>
+            <p class="rating">2.5 ★★★★★ <span>(1,121)</span></p>
+        </div>
+    </div>
+</div>
+    <div class="personalize-section">
+        <img src="./Source/Icon/user.png" alt=""style="width: 40px; height: 40px;">
+        <h3>Personalize your learning experience</h3>
+        <p>Add your occupation and interests to get better content recommendations.</p>
+        <button>Add occupation and interests</button>
+    </div>
+</div>
+</div>
+</body>
+</html>
