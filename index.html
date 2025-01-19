@@ -8,19 +8,19 @@
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f2f4f7; /* Màu nền nhẹ nhàng */
+            background-color: #f2f4f7;
             overflow: hidden;
         }
 
         .welcome-container {
             position: relative;
-            text-align: center;
             width: 800px;
-            height: 600px; /* Tăng chiều cao để căn giữa theo chiều dọc */
+            height: 600px;
         }
 
         .circle {
@@ -33,29 +33,29 @@
         }
 
         .circle:nth-child(1) {
-            background-color: #ff8a80; /* Màu đỏ nhạt */
-            left: -100px;
-            top: 100px; /* Căn chỉnh hình tròn dọc */
+            background-color: #ff8a80;
+            left: -250px;
+            top: 100px;
             animation-delay: 0s;
         }
 
         .circle:nth-child(2) {
-            background-color: #ffd180; /* Màu cam nhạt */
-            left: 200px;
+            background-color: #ffd180;
+            left: 50px;
             top: 100px;
             animation-delay: 1s;
         }
 
         .circle:nth-child(3) {
-            background-color: #ffff8d; /* Màu vàng nhạt */
-            left: 500px;
+            background-color: #ffff8d;
+            left: 350px;
             top: 100px;
             animation-delay: 2s;
         }
 
         .circle:nth-child(4) {
-            background-color: #a7ffeb; /* Màu xanh nhạt */
-            left: 800px;
+            background-color: #a7ffeb;
+            left: 650px;
             top: 100px;
             animation-delay: 3s;
         }
@@ -70,20 +70,18 @@
         }
 
         .text {
-            position: absolute;
-            top: 40%; /* Đưa chữ "Welcome" vào giữa */
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 100px; /* Kích thước chữ lớn */
+            font-size: 100px;
             font-weight: bold;
-            color: #ffffff; /* Màu chữ trắng */
+            color: white;
             text-transform: uppercase;
+            margin-bottom: 20px;
             animation: bounce 2s infinite;
+            margin: 200px;
         }
 
         .start-btn {
             position: absolute;
-            top: 60%; /* Đưa nút "Start" cách đều dòng chữ theo chiều dọc */
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: inline-block;
@@ -91,20 +89,19 @@
             font-size: 24px;
             font-weight: bold;
             color: white;
-            background-color: #00796b; /* Màu xanh đậm */
+            background-color: #00796b;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
-            transition: background-color 0.3s, transform 0.2s;
-            text-decoration: none; /* Bỏ gạch chân nếu dùng thẻ <a> */
+            transition: background-color 0.3s, transform 0.2s ease-out;
+            text-decoration: none;
         }
 
         .start-btn:hover {
-            background-color: #004d40; /* Màu xanh đậm hơn khi hover */
-            transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
+            background-color: #004d40;
+            transform: scale(1.05); /* Chỉ phóng to mà không làm nút di chuyển */
         }
 
         @keyframes bounce {
@@ -127,13 +124,13 @@
     </style>
 </head>
 <body>
+    <!-- Container chứa các hình tròn -->
     <div class="welcome-container">
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="text">Welcome</div>
-        <!-- Nút Start dẫn đến next-page.html -->
         <a href="login.html" class="start-btn">Start</a>
     </div>
 </body>
